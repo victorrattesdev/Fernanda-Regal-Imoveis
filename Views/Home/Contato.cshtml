@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewBag.Title = "Contato";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body class="page page-fale-conosco page_form  ">
+    <div class="wrapper">       
+        <div class="content-wrapper">
+            <div class="section_main_title" style="display: none;">
+            <div class="container">
+                <h1>Fale Conosco<small><span class="hide">Fale Conosco</span></small></h1></div></div>
+        <div class="wrapper_bread"><div class="container"><ol class="breadcrumb"><li><a href="/home">Página Inicial</a></li><li>Fale Conosco</li></ol></div></div>
+        <section class="content">
+            <div class="spark-screen">
+            <div class="container">
+                <div class="background fale-conosco col-md-6 col-sm-12"></div>
+                <div class="row box-fale-conosco col-md-6 col-sm-12"><div class="contato-fale-conosco box-contato">
+                    <form class="form-contato"><div class="formEnviar"><input type="hidden" name="token" value="">
+                        <input type="hidden" name="FormularioID" value="1"><input type="hidden" name="Tag" value="contato/fale-conosco">
+                        <div class="row mx-0">
+                        <div class="col-12">
+                            <h2>Entre em contato</h2>
+                        </div>
+                        <div class="col-12">
+                            <p>Entre em contato conosco e saiba como é fácil comprar, alugar ou vender seu imóvel</p><br>
+                        </div><div class="form-group col-xl-6 col-12">
+                            <input class="form-control" type="text" name="Nome" value="" placeholder="Nome*" required="">
+                        </div>
+                        <div class="form-group col-xl-6 col-12">
+                            <input class="form-control mask-email" type="text" name="Email" value="" placeholder="E-mail*" required="">
+                        </div>
+                        <div class="form-group col-xl-4 col-12">
+                            <input class="form-control mask-tel" type="text" name="TelResidencial" value="" placeholder="DDD + Telefone" maxlength="15">
+                        </div>
+                        <div class="form-group col-xl-4 col-12">
+                            <input class="form-control mask-tel" type="text" name="TelCelular" value="" placeholder="DDD + Celular" maxlength="15">
+                        </div>
+                        <div class="form-group col-xl-4 col-12">
+                            <input class="form-control" type="text" name="Assunto" value="" placeholder="Assunto*" required="">
+                        </div>
+                        <div class="form-group col-12">
+                            <textarea name="Mensagem" class="form-control" placeholder="Mensagem*" required=""></textarea>
+                        </div><div class="form-group col-12 text-right">
+                            <button class="btn form-submit" type="submit">Enviar</button>
+                        </div>
+                        <div class="col-12">
+                            <h3 class="contato-titulo"></h3>
+                            <span class="contato-mss"></span>
+                        </div>
+                        </div>
+                        </div>
+                    <div class="formResposta text-center">
+                        <i class="far fa-check-circle"></i>
+                        <h2><strong>Mensagem enviada,</strong> breve entraremos em contato.</h2>
+                        </div>
+                        </form>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </section>
+            </div>
+        </div>
+            
+</body>

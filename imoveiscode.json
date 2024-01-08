@@ -1,0 +1,14 @@
+[
+  {
+    "Titulo": "Casa",
+    "Quartos": 2,
+    "Banheiros": 3,
+    "Vagas": 1
+  },
+  {
+    "Titulo": "AP",
+    "Quartos": 3,
+    "Banheiros": 4,
+    "Vagas": 5
+  }
+]
