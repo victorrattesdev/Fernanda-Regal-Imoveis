@@ -1,0 +1,63 @@
+﻿
+===========================
+Pré-requisitos :
+--------------------------
+Para implantar este pacote da Web, a Implantação da Web (msdeploy.exe) deve estar instalada no computador que executa o arquivo .cmd. Para obter informações sobre como instalar a Implantação da Web, consulte a seguinte URL:
+https://go.microsoft.com/?linkid=9278654
+Este arquivo em lotes requer que o arquivo de pacote "Fernanda1.zip" e o arquivo de parâmetros "Fernanda1.SetParameters.xml" opcional estejam na mesma pasta ou na pasta de destino pela variável de ambiente.
+
+===========================
+Uso:
+--------------------------
+Fernanda1.deploy.cmd [/T|/Y] [/M:NomedoComputador] [/U:NomedeUsuário] [/P:Senha] [/G:UsarAgenteTemp] [Sinalizadores msdeploy.exe adicionais ...]
+
+
+===========================
+Sinalizadores necessários:
+--------------------------
+/T:
+	Chama msdeploy.exe com o sinalizador "-whatif", que simula a implantação Esse comando não implanta o pacote. Em vez disso, cria um relatório sobre o que acontecerá quando você realmente implantar o pacote.
+/Y:
+	Chama msdeploy.exe sem o sinalizador "-whatif", que implanta o pacote no computador atual ou em um servidor de destino Use /Y depois de verificar a saída gerada usando o sinalizador /T.
+
+Observação: não use /T e /Y no mesmo comando.
+
+===========================
+Sinalizadores Opcionais:
+--------------------------
+ Por padrão, a implantação de script no computador atual onde o script é chamado com a credencial do usuário atual sem serviço de agente. Passe somente o valor a seguir para cenário avançado.
+
+/M:<Nome do servidor de destino ou URL do Serviço>
+	Se o sinalizador não for especificado, o pacote será instalado no computador onde o comando é executado. A URL do Serviço pode ter o seguinte formato:
+ https://<ServidordeDestino>:8172/MSDeploy.axd 
+ Esse formato requer que o IIS 7 esteja instalado no servidor de destino e que o WMSvc (Serviço de Gerenciamento da Web) e o Manipulador de Implantação da Web do IIS 7 estejam configurados.
+ A URL do serviço também pode ter o seguinte formato:
+ http://<ServidordeDestino>/MSDeployAgentService 
+ Esse formato requer direitos administrativos no servidor de destino e requer que o MsDepSvc (Serviço Remoto de Implantação da Web) esteja instalado no servidor de destino. O IIS 7 não precisa estar instalado no servidor de destino.
+
+/U:<NomedeUsuário>
+/P:<Senha>
+/G:<True | False>
+	Especifica se o pacote é implantado mediante a criação de um ouvinte temporário no servidor de destino. Não requer nenhuma instalação especial no servidor de destino, mas você deve ser um administrador nesse servidor. O valor padrão do sinalizador é False. 
+
+/A:<Basic | NTLM>
+	Especifica o tipo de autenticação a ser usado. Os valores possíveis são NTLM e Basic. Se a configuração do provedor wmsvc for especificada, o tipo de autenticação padrão será Basic; caso contrário, o tipo será NTLM. 
+
+/L 
+	Especifica que o pacote é implantado na instância de usuário do IISExpress local.
+
+[Sinalizadores msdeploy.exe adicionais]
+	O comando msdeploy.exe dá suporte a sinalizadores adicionais. É possível incluir qualquer um desses sinalizadores adicionais no arquivo ""$(ProjectName).Deploy.cmd"". Os sinalizadores são transmitidos para msdeploy.exe durante a execução.
+	Você também pode especificar sinalizadores adicionais configurando a variável de ambiente ""_MsDeployAdditionalFlags"". Essas configurações são usadas por este arquivo em lotes.
+ Observação: qualquer valor de sinalizador que inclua um sinal de igual (=) deve ser colocado entre aspas duplas, como mostrado no exemplo a seguir, que ignora a implantação de bancos de dados incluídos no pacote:
+		"-skip:objectName=dbFullSql" 
+
+===========================
+Configurações específicas ao ambiente:
+--------------------------
+
+	Para personalizar configurações específicas ao aplicativo para cada ambiente de implantação (por exemplo, o nome do aplicativo do IIS, o caminho físico e qualquer cadeia de conexão), edite as configurações no seguinte arquivo: 
+		 "Fernanda1.SetParameters.xml"
+===========================
+Para obter mais informações sobre este script de implantação, acesse:	https://go.microsoft.com/fwlink/?LinkID=183544
+

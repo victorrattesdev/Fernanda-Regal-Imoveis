@@ -1,0 +1,124 @@
+﻿@model List<Fernanda.Models.ImovelCode>
+
+@{
+    ViewBag.Title = "Outros";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content-wrapper">
+    <section class="content-header d-none d-xl-block">
+        <div class="section_main_title" style="display: none;">
+            <div class="container">
+                <h1>
+                    <div class="">Lançamentos para venda no Rio de Janeiro</div><small>
+                        <div class="hide">Prontos</div>
+                    </small>
+                </h1>
+            </div>
+        </div>
+        <div class="wrapper_bread"><div class="container"><ol class="breadcrumb"><li><a href="/home">Página Inicial</a></li><li><a href="/home/Outros">Imóveis</a></li><li><a href="/Imoveis/Planta">Imóveis na planta para venda no Rio de Janeiro</a></li></ol></div></div>
+    </section>
+    <section class="content">
+        <div class="spark-screen">
+            <div class="container">
+                <div class="row"></div>
+            </div>
+            <div class="container mt-xl-4">
+                <div class="row">
+                    <div class="col-xl-9 col-12 pl-xl-4" style="margin-left:200px">
+                        <div class="row justify-content-between">
+                            <div class="resulto_top col-xl-5 col-12 order-1 order-xl-1"></div><div class="col-12 order-2 order-xl-1">
+                                <div id="content_info_imv">
+                                    <div class="count-total">
+                                        <span class="pull-left">
+                                            <h2>
+                                                <span class="ttcount">24</span> imóveis
+                                                à venda
+                                            </h2>
+                                        </span><div class="tags_filtro"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-list-container ">
+                            <div class="load_grid_list"><i class="fa fa-spinner fa-spin fa-3x fa-fw"></i></div>
+                            <div class="row">
+                                <div class="col-12 content-list" id="product-list">
+                                    <div class="row">
+
+                                        @foreach (var item in Model)
+                                        {
+                                            <div class="content_row_product col-12 col-md-6 col-lg-12">
+                                                <div class="product-row row mx-0 item-id-118">
+                                                    <div class="col-lg-5 group-slides">
+                                                        <div class="row">
+
+                                                            <div class="label-codigo lancamento"><span class="codigo-imovel">@item.Divulga</span></div>
+
+                                                            <div class="slides lancamento_slides slick-initialized slick-slider">
+                                                                <div aria-live="polite" class="slick-list draggable">
+                                                                    <div class="slick-track" style="opacity: 1; width: 540px; transform: translate3d(0px, 0px, 0px);" role="listbox">
+                                                                        <a href="@Url.Action("Imovel", "Imoveis", new { codigo = item.ID })" target="_blank" title="">
+                                                                            <img src="" style="background: url(@item.Capa) center center / cover no-repeat; width: 540px; margin-left:-12px;" class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" tabindex="-1" role="option" aria-describedby="slick-slide00">
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-7 group-info">
+                                                        <div class="row">
+                                                            <div class="col-md-12 sub-info">
+                                                                <a href="@Url.Action("Imovel", "Imoveis", new { codigo = item.ID })" target="_blank" title="" class="tipo_lancamento">
+                                                                    <h2><span class="empnome">@item.Titulo</span></h2>
+
+                                                                    <h3>@item.Endereco</h3><div class="label-tipos"><label class="tipo"></label></div><ul class="itens">
+
+                                                                        <li title="@item.Area" class="area_util">
+                                                                            <div class="icon_wrap">
+                                                                                <img src="~/Content/img/area.png" />
+                                                                            </div><h2><span style="text-align:center">@item.Area</span></h2>
+                                                                        </li>
+                                                                        <li title="@item.Quartos" class="area_util" style="padding-left:40px;">
+                                                                            <div class="icon_wrap">
+                                                                                <img src="~/Content/img/double-bed.png" />
+                                                                            </div><h2><span style="text-align:center">@item.Quartos</span></h2>
+
+                                                                        </li>
+                                                                        <li title="@item.Banheiros" class="area_util" style="padding-left:40px;">
+                                                                            <div class="icon_wrap">
+                                                                                <img src="~/Content/img/bath.png" />
+                                                                            </div><h2><span style="text-align:center">@item.Banheiros</span></h2>
+                                                                        </li>
+                                                                        <li title="@item.Vagas" class="area_util" style="padding-left:40px;">
+                                                                            <div class="icon_wrap">
+                                                                                <img src="~/Content/img/garage.png" />
+                                                                            </div><h2><span style="text-align:center">@item.Vagas</span></h2>
+                                                                        </li>
+
+                                                                    </ul>
+                                                                </a>
+                                                            </div>
+                                                        </div><div class="row">
+                                                            <div class="group-actions col-12 col-lg-12 mb-2 mb-lg-0">
+                                                                <div class="btn_box">
+
+                                                                    <div><a href="https://wa.me/5521982379401?text=Olá,gostaria de saber mais sobre o imóvel - @item.Titulo" target="blank">Consulte-nos</a></div>
+
+                                                                    <a class="btn btn-detalhes" href="@Url.Action("Imovel", "Imoveis", new { codigo = item.ID })" target="_blank" title="">Ver Imóvel</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        }
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    </section>
+</div>
+

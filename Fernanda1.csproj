@@ -14,7 +14,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Fernanda1</RootNamespace>
     <AssemblyName>Fernanda1</AssemblyName>
-    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -45,20 +46,52 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.AspNetCore.Http.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNetCore.Http.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Http.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http.Features, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNetCore.Http.Features.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Http.Features.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNetCore.Mvc.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Routing.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNetCore.Routing.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Routing.Abstractions.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Extensions.Primitives, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.Primitives.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Net.Http.Headers, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Net.Http.Headers.2.2.0\lib\netstandard2.0\Microsoft.Net.Http.Headers.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.5.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Memory, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.1\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Numerics.Vectors.4.4.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.4.5.1\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Text.Encodings.Web.4.5.0\lib\netstandard2.0\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
@@ -102,6 +135,7 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
@@ -147,16 +181,327 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\header.css" />
+    <Content Include="Content\img\11.jpg" />
+    <Content Include="Content\img\area.png" />
+    <Content Include="Content\img\arrow-left.png" />
+    <Content Include="Content\img\arrow-right.png" />
+    <Content Include="Content\img\Banner_1.png" />
+    <Content Include="Content\img\Banner_2.png" />
+    <Content Include="Content\img\bath.png" />
+    <Content Include="Content\img\bed-icon.jpg" />
     <Content Include="Content\img\capa.png" />
+    <Content Include="Content\img\contact-photo.jpg" />
+    <Content Include="Content\img\contact.jpg" />
+    <Content Include="Content\img\double-bed.png" />
+    <Content Include="Content\img\garage.png" />
+    <Content Include="Content\img\imovel14\0a1b281f2fa976f7-IMG_8259.JPG" />
+    <Content Include="Content\img\imovel14\27e685a124e8ed2e-IMG_8160.JPG" />
+    <Content Include="Content\img\imovel14\2d4cc66f5c920361-IMG_8239.JPG" />
+    <Content Include="Content\img\imovel14\45d1818b0383dcbc-IMG_8176.JPG" />
+    <Content Include="Content\img\imovel14\4aaca7999f70d84a-IMG_8188.JPG" />
+    <Content Include="Content\img\imovel14\4fb57c260a2cb4bb-IMG_8161.JPG" />
+    <Content Include="Content\img\imovel14\50c372c108c5c635-IMG_8166.JPG" />
+    <Content Include="Content\img\imovel14\5784779f8d5ba79f-IMG_8220.JPG" />
+    <Content Include="Content\img\imovel14\57c80e441b73becf-IMG_8170.JPG" />
+    <Content Include="Content\img\imovel14\585d108f7708073b-IMG_8235.JPG" />
+    <Content Include="Content\img\imovel14\5e1976b2947054ff-IMG_8304.JPG" />
+    <Content Include="Content\img\imovel14\6a74210f1888fe73-IMG_8257.JPG" />
+    <Content Include="Content\img\imovel14\72e8f89ef5449431-IMG_8206.JPG" />
+    <Content Include="Content\img\imovel14\78499c6225fbb3de-IMG_8216.JPG" />
+    <Content Include="Content\img\imovel14\8ad9c40a793159b0-IMG_8185.JPG" />
+    <Content Include="Content\img\imovel14\8b0c3b96cb63feb4-IMG_8157.JPG" />
+    <Content Include="Content\img\imovel14\8f9ff21662268a12-IMG_8271.JPG" />
+    <Content Include="Content\img\imovel14\913a5a775a68a64f-IMG_8268.JPG" />
+    <Content Include="Content\img\imovel14\9a3d715354a19978-IMG_8146.JPG" />
+    <Content Include="Content\img\imovel14\ac25e4c0e9fc7d5e-IMG_8199.JPG" />
+    <Content Include="Content\img\imovel14\b196de444bc02a7c-IMG_8196.JPG" />
+    <Content Include="Content\img\imovel14\ba67b26e473539be-IMG_8207.JPG" />
+    <Content Include="Content\img\imovel14\c52387f9d0d2730e-IMG_8244.JPG" />
+    <Content Include="Content\img\imovel14\d339caf5d18f44e1-IMG_8210.JPG" />
+    <Content Include="Content\img\imovel14\deee38d870446988-IMG_8288.JPG" />
+    <Content Include="Content\img\imovel14\e29ee56149f3eaf1-IMG_8227.JPG" />
+    <Content Include="Content\img\imovel14\f96c5ea74d63a560-IMG_8193.JPG" />
+    <Content Include="Content\img\imovel14\fa863826791c903b-IMG_8223.JPG" />
+    <Content Include="Content\img\imovel1\foto1.jpg" />
+    <Content Include="Content\img\imovel1\foto2.jpg" />
+    <Content Include="Content\img\imovel20\0e4f47469883b747-DSC05385.jpg" />
+    <Content Include="Content\img\imovel20\18139c6cfdf81349-DSC05346.jpg" />
+    <Content Include="Content\img\imovel20\194ae3f80956e196-IMG-20230601-WA0030.jpg" />
+    <Content Include="Content\img\imovel20\1bde1a78e4d34605-DSC05300.jpg" />
+    <Content Include="Content\img\imovel20\20cace30bc720e38-DSC05376.jpg" />
+    <Content Include="Content\img\imovel20\402bc09b3d8f6e3e-DSC05293.jpg" />
+    <Content Include="Content\img\imovel20\46c88a83d3f9c126-DSC05354.jpg" />
+    <Content Include="Content\img\imovel20\482c053004d34a3f-DSC05307.jpg" />
+    <Content Include="Content\img\imovel20\4b3c05d3060a1a9a-DSC05378.jpg" />
+    <Content Include="Content\img\imovel20\5051cf009531180b-DSC05339.jpg" />
+    <Content Include="Content\img\imovel20\5173abca04e69826-DSC05360.jpg" />
+    <Content Include="Content\img\imovel20\5fa3b5717e780b56-DSC05355.jpg" />
+    <Content Include="Content\img\imovel20\62b0eb63eabe0b55-DSC05338.jpg" />
+    <Content Include="Content\img\imovel20\6d99149d57c4b4db-DSC05318.jpg" />
+    <Content Include="Content\img\imovel20\701934c8d0210269-IMG-20230601-WA0023.jpg" />
+    <Content Include="Content\img\imovel20\769b4819d7116d44-DSC05375.jpg" />
+    <Content Include="Content\img\imovel20\7c092dae70319cbb-DSC05350.jpg" />
+    <Content Include="Content\img\imovel20\80002c8e39439e54-DSC05312.jpg" />
+    <Content Include="Content\img\imovel20\95be7d101f20beff-DSC05356.jpg" />
+    <Content Include="Content\img\imovel20\96837aa30c2bab65-DSC05342.jpg" />
+    <Content Include="Content\img\imovel20\a289437444e9033a-DSC05386.jpg" />
+    <Content Include="Content\img\imovel20\ab8bd8eae69ee70c-DSC05294.jpg" />
+    <Content Include="Content\img\imovel20\b052b4213f7363be-DSC05298.jpg" />
+    <Content Include="Content\img\imovel20\b277838fde3e2892-DSC05306.jpg" />
+    <Content Include="Content\img\imovel20\c17e59537611c353-DSC05343.jpg" />
+    <Content Include="Content\img\imovel20\ca0d19a882242022-DSC05373.jpg" />
+    <Content Include="Content\img\imovel20\d1d90543c10d7596-DSC05327.jpg" />
+    <Content Include="Content\img\imovel20\fbdb26915a16faac-DSC05316.jpg" />
+    <Content Include="Content\img\imovel21\fotos-1.jpg" />
+    <Content Include="Content\img\imovel21\fotos-10.jpg" />
+    <Content Include="Content\img\imovel21\fotos-11.jpg" />
+    <Content Include="Content\img\imovel21\fotos-12.jpg" />
+    <Content Include="Content\img\imovel21\fotos-13.jpg" />
+    <Content Include="Content\img\imovel21\fotos-14.jpg" />
+    <Content Include="Content\img\imovel21\fotos-15.jpg" />
+    <Content Include="Content\img\imovel21\fotos-16.jpg" />
+    <Content Include="Content\img\imovel21\fotos-17.jpg" />
+    <Content Include="Content\img\imovel21\fotos-18.jpg" />
+    <Content Include="Content\img\imovel21\fotos-19.jpg" />
+    <Content Include="Content\img\imovel21\fotos-2.jpg" />
+    <Content Include="Content\img\imovel21\fotos-20.jpg" />
+    <Content Include="Content\img\imovel21\fotos-21.jpg" />
+    <Content Include="Content\img\imovel21\fotos-22.jpg" />
+    <Content Include="Content\img\imovel21\fotos-23.jpg" />
+    <Content Include="Content\img\imovel21\fotos-24.jpg" />
+    <Content Include="Content\img\imovel21\fotos-25.jpg" />
+    <Content Include="Content\img\imovel21\fotos-26.jpg" />
+    <Content Include="Content\img\imovel21\fotos-27.jpg" />
+    <Content Include="Content\img\imovel21\fotos-3.jpg" />
+    <Content Include="Content\img\imovel21\fotos-4.jpg" />
+    <Content Include="Content\img\imovel21\fotos-5.jpg" />
+    <Content Include="Content\img\imovel21\fotos-6.jpg" />
+    <Content Include="Content\img\imovel21\fotos-7.jpg" />
+    <Content Include="Content\img\imovel21\fotos-8.jpg" />
+    <Content Include="Content\img\imovel21\fotos-9.jpg" />
+    <Content Include="Content\img\imovel22\02b62749bae3014a-aa641278c1deadd4-IMG_1065.JPG" />
+    <Content Include="Content\img\imovel22\03118cb91e8648a2-IMG_7278.jpg" />
+    <Content Include="Content\img\imovel22\071cc5a8e1cd2d8e-b1fca5cd65c1bd95-IMG_1056.JPG" />
+    <Content Include="Content\img\imovel22\0c312cba6e02bed4-IMG_7251.jpg" />
+    <Content Include="Content\img\imovel22\14ff5850177b07dd-IMG_7254.jpg" />
+    <Content Include="Content\img\imovel22\207610c7c6640f24-IMG_7211.jpg" />
+    <Content Include="Content\img\imovel22\2e9e391c1692d157-IMG_7305.jpg" />
+    <Content Include="Content\img\imovel22\34c4100ffa20e135-IMG_7260.jpg" />
+    <Content Include="Content\img\imovel22\37e2e7e08b059d62-IMG_7199.jpg" />
+    <Content Include="Content\img\imovel22\39685b1daaade75b-IMG_7193.jpg" />
+    <Content Include="Content\img\imovel22\3d2be4ae72810ff1-IMG_7220.jpg" />
+    <Content Include="Content\img\imovel22\3ffefe41962c1aa9-9b91e8571e27fa63-planta 901.jpg" />
+    <Content Include="Content\img\imovel22\51064fdfc74600e4-IMG_7284.jpg" />
+    <Content Include="Content\img\imovel22\5739254c2131bef1-IMG_7248.jpg" />
+    <Content Include="Content\img\imovel22\5917bce5b072fe90-IMG_7246.jpg" />
+    <Content Include="Content\img\imovel22\5a6f8a527904ed9e-IMG_7202.jpg" />
+    <Content Include="Content\img\imovel22\5d7b79f59c86619c-IMG_7196.jpg" />
+    <Content Include="Content\img\imovel22\7e69245b6689650e-IMG_7290.jpg" />
+    <Content Include="Content\img\imovel22\89189c6f41aee64d-IMG_7257.jpg" />
+    <Content Include="Content\img\imovel22\9a9fe668982ae510-IMG_7232.jpg" />
+    <Content Include="Content\img\imovel22\a0cd546f7f9ef21e-IMG_7272.jpg" />
+    <Content Include="Content\img\imovel22\ad50f3fc59a466ea-IMG_7281.jpg" />
+    <Content Include="Content\img\imovel22\c92347ae583625e9-IMG_7302.jpg" />
+    <Content Include="Content\img\imovel22\c975d798f45b3bd5-IMG_7239.jpg" />
+    <Content Include="Content\img\imovel22\d5a9f0546eb6d951-IMG_7293.jpg" />
+    <Content Include="Content\img\imovel22\db8235ee549402c1-IMG_7210-HDR.jpg" />
+    <Content Include="Content\img\imovel22\dbd404b886f535e4-IMG_7235.jpg" />
+    <Content Include="Content\img\imovel22\e2a112ccbf667ff3-IMG_7229.jpg" />
+    <Content Include="Content\img\imovel22\e68becd7cef14415-IMG_7214.jpg" />
+    <Content Include="Content\img\imovel22\ec0c99d3775ca9e1-15384a65d12a5ef3-IMG_1050.JPG" />
+    <Content Include="Content\img\imovel22\f748ec165f716532-IMG_7287.jpg" />
+    <Content Include="Content\img\imovel22\ff68065bdc0b077c-IMG_7266.jpg" />
+    <Content Include="Content\img\imovel23\17878569396da1dc-IMG_7383.jpg" />
+    <Content Include="Content\img\imovel23\1e69ff65ae45dec7-IMG_7398.jpg" />
+    <Content Include="Content\img\imovel23\2817356ec3c3e50e-IMG_7313-HDR.jpg" />
+    <Content Include="Content\img\imovel23\2a4d73ad3c80d902-IMG_7417.jpg" />
+    <Content Include="Content\img\imovel23\3a2bfa8f381d9ef5-IMG_7332.jpg" />
+    <Content Include="Content\img\imovel23\41ab9fc18b217c73-IMG_7319.jpg" />
+    <Content Include="Content\img\imovel23\4b0ea23eba554c07-IMG_7353.jpg" />
+    <Content Include="Content\img\imovel23\51e78e6d4d928d5c-IMG_7326.jpg" />
+    <Content Include="Content\img\imovel23\5e616ca2c8aecc19-IMG_7401.jpg" />
+    <Content Include="Content\img\imovel23\654b9765893eeb31-IMG_7338.jpg" />
+    <Content Include="Content\img\imovel23\67ea1bb0965b8586-b1fca5cd65c1bd95-IMG_1056.JPG" />
+    <Content Include="Content\img\imovel23\68ae4b09f66a8bd7-IMG_7375.jpg" />
+    <Content Include="Content\img\imovel23\70034ea6a4d9523b-IMG_7344.jpg" />
+    <Content Include="Content\img\imovel23\783801008199aae2-IMG_7366.jpg" />
+    <Content Include="Content\img\imovel23\8c22f764f59a4bf8-IMG_7395.jpg" />
+    <Content Include="Content\img\imovel23\8d92d7f035cd4a35-IMG_7389.jpg" />
+    <Content Include="Content\img\imovel23\9140deae9db62552-IMG_7331.jpg" />
+    <Content Include="Content\img\imovel23\92dc913080d20afd-IMG_7341.jpg" />
+    <Content Include="Content\img\imovel23\978e1f55ba2a0a43-IMG_7392.jpg" />
+    <Content Include="Content\img\imovel23\99c01fc5c37069d4-IMG_7350.jpg" />
+    <Content Include="Content\img\imovel23\9d67a74b90b79199-IMG_7321.jpg" />
+    <Content Include="Content\img\imovel23\b63e806586b676b2-IMG_7407.jpg" />
+    <Content Include="Content\img\imovel23\bc4562c7e2700b33-IMG_7347.jpg" />
+    <Content Include="Content\img\imovel23\c2a21b07c716f7d3-IMG_7335.jpg" />
+    <Content Include="Content\img\imovel23\d181b55d1d1f5aa3-9eac10a7eaf2b30a-PLANTA 902.jpg" />
+    <Content Include="Content\img\imovel23\d6c7beccbe7a84f1-15384a65d12a5ef3-IMG_1050.JPG" />
+    <Content Include="Content\img\imovel23\de16458d0ff13aa0-IMG_7371.jpg" />
+    <Content Include="Content\img\imovel23\de7667755d9ea05d-IMG_7377.jpg" />
+    <Content Include="Content\img\imovel23\e4be32a346eeb1d3-aa641278c1deadd4-IMG_1065.JPG" />
+    <Content Include="Content\img\imovel23\e8cd66980f829fbc-IMG_7363.jpg" />
+    <Content Include="Content\img\imovel23\f7cb4e2b40cffd5e-IMG_7360.jpg" />
+    <Content Include="Content\img\imovel23\fdb429fefe645774-IMG_7380.jpg" />
+    <Content Include="Content\img\imovel24\02dd8fb37e51ad5e-20230710_181259.jpg" />
+    <Content Include="Content\img\imovel24\05e77f6da25f7081-20230710_181034.jpg" />
+    <Content Include="Content\img\imovel24\1b82cefd2ab88d49-20230710_182251.jpg" />
+    <Content Include="Content\img\imovel24\249fc8068321bba5-20230710_180244.jpg" />
+    <Content Include="Content\img\imovel24\2a4d0e21b288b66f-20230710_182545.jpg" />
+    <Content Include="Content\img\imovel24\44f270c0b3da96a9-20230710_182121.jpg" />
+    <Content Include="Content\img\imovel24\529613bee8a5616f-20230710_183630.jpg" />
+    <Content Include="Content\img\imovel24\6634cf76f50bd1a6-20230710_181127.jpg" />
+    <Content Include="Content\img\imovel24\6cffc90c84ccf507-0fe1091a6ed4c617-fachada 02.jpg" />
+    <Content Include="Content\img\imovel24\7015f6b3f677281a-20230710_183638.jpg" />
+    <Content Include="Content\img\imovel24\82773cb79ea8b5f6-192444012e52e212-área gourmet 01 %281%29.jpg" />
+    <Content Include="Content\img\imovel24\894309cba503bd9a-20230710_181827.jpg" />
+    <Content Include="Content\img\imovel24\897876a0e956bdf0-20230710_180309.jpg" />
+    <Content Include="Content\img\imovel24\92840fe1759b8fc3-b4df64116da334d3-área gourmet 02 %281%29.jpg" />
+    <Content Include="Content\img\imovel24\972019191a234448-cd99b3225d84713e-3 e 4 tipo planta.jpg" />
+    <Content Include="Content\img\imovel24\9f83f12d8fdad4e9-20230710_182323.jpg" />
+    <Content Include="Content\img\imovel24\ab5cec7df11bb3e6-20230710_182525.jpg" />
+    <Content Include="Content\img\imovel24\b06f3d86cfce8734-20230710_182712.jpg" />
+    <Content Include="Content\img\imovel24\b3623051ff3a3647-20230710_182818.jpg" />
+    <Content Include="Content\img\imovel24\c5fc071526fce682-aa015aa8a30fcd09-fachada 01.jpg" />
+    <Content Include="Content\img\imovel24\c7584121dd680209-da7ec821f236995b-área gourmet 03 %281%29.jpg" />
+    <Content Include="Content\img\imovel24\cdb1db923250d8b7-20230710_182216.jpg" />
+    <Content Include="Content\img\imovel24\d46de4a9392d4cff-20230710_181957.jpg" />
+    <Content Include="Content\img\imovel24\d661f3ccdb9678a7-00ed799ec7a960a6-área gourmet 04 %281%29.jpg" />
+    <Content Include="Content\img\imovel24\e706aef5fa75ae94-20230710_181417.jpg" />
+    <Content Include="Content\img\imovel2\foto1.JPG" />
+    <Content Include="Content\img\imovel2\foto2.jpg" />
+    <Content Include="Content\img\imovel2\foto3.JPG" />
+    <Content Include="Content\img\imovel2\foto4.JPG" />
+    <Content Include="Content\img\imovel2\foto5.JPG" />
+    <Content Include="Content\img\imovel2\foto6.JPG" />
+    <Content Include="Content\img\imovel2\foto7.JPG" />
+    <Content Include="Content\img\imovel2\foto8.jpg" />
+    <Content Include="Content\img\imovel2\foto9.JPG" />
+    <Content Include="Content\img\imovel2\foto10.JPG" />
+    <Content Include="Content\img\imovel2\foto11.JPG" />
+    <Content Include="Content\img\imovel2\capa.jpg" />
+    <Content Include="Content\img\imovel2\foto12.jpg" />
+    <Content Include="Content\img\imovel2\foto13.JPG" />
+    <Content Include="Content\img\imovel2\foto14.jpg" />
+    <Content Include="Content\img\imovel2\foto15.jpg" />
+    <Content Include="Content\img\imovel2\foto16.JPG" />
+    <Content Include="Content\img\imovel2\foto17.jpg" />
+    <Content Include="Content\img\imovel2\foto18.JPG" />
+    <Content Include="Content\img\imovel2\foto19.jpg" />
+    <Content Include="Content\img\imovel4\05aa43dd9e3889b3-IMG_6520.JPG" />
+    <Content Include="Content\img\imovel4\06dccd1179256741-4226e77a27e02cb1-planta cob 01 copiar.jpg" />
+    <Content Include="Content\img\imovel4\107a67ce52591651-IMG_6603.JPG" />
+    <Content Include="Content\img\imovel4\14bfecc55b020287-IMG_6577.JPG" />
+    <Content Include="Content\img\imovel4\17ef6059910634be-IMG_6637.JPG" />
+    <Content Include="Content\img\imovel4\17fd03b8e84a8baa-IMG_6531.JPG" />
+    <Content Include="Content\img\imovel4\2dd97c1428959666-IMG_6594.JPG" />
+    <Content Include="Content\img\imovel4\2e4e700c98344585-IMG_6550.JPG" />
+    <Content Include="Content\img\imovel4\3800ed18c9ef8907-IMG_6553.JPG" />
+    <Content Include="Content\img\imovel4\3ee19891e29eacdb-IMG_6570.JPG" />
+    <Content Include="Content\img\imovel4\42b3064b2956d5f5-IMG_6562.JPG" />
+    <Content Include="Content\img\imovel4\46ed97595dda3e0c-IMG_6582.JPG" />
+    <Content Include="Content\img\imovel4\47be47c8c230f90f-IMG_6591.JPG" />
+    <Content Include="Content\img\imovel4\47cf17abb6793c2e-IMG_6597.JPG" />
+    <Content Include="Content\img\imovel4\492888914abea0d5-IMG_6541.JPG" />
+    <Content Include="Content\img\imovel4\5bf0bbb11ea8f6f2-IMG_6565.JPG" />
+    <Content Include="Content\img\imovel4\5ccc48272fc6cd00-IMG_6518-HDR.JPG" />
+    <Content Include="Content\img\imovel4\6481fd6eb314fa4a-IMG_6547.JPG" />
+    <Content Include="Content\img\imovel4\667844f5d3a7fc45-IMG_6612.JPG" />
+    <Content Include="Content\img\imovel4\6838d48d6718340d-IMG_6513.JPG" />
+    <Content Include="Content\img\imovel4\70b5e54a6f0322c1-IMG_6600.JPG" />
+    <Content Include="Content\img\imovel4\731da0c6561b5212-IMG_6618.JPG" />
+    <Content Include="Content\img\imovel4\746824af68f6a837-IMG_6528-HDR.JPG" />
+    <Content Include="Content\img\imovel4\7c9ea1c3a395843a-IMG_6624.JPG" />
+    <Content Include="Content\img\imovel4\7ed966ff672e5aa1-IMG_6527-HDR.JPG" />
+    <Content Include="Content\img\imovel4\849d5c4e257cdc3a-IMG_6544.JPG" />
+    <Content Include="Content\img\imovel4\892ec47227d237dd-IMG_6556.JPG" />
+    <Content Include="Content\img\imovel4\9029b6f4cc255316-IMG_6606-HDR.JPG" />
+    <Content Include="Content\img\imovel4\9c62f7a6d44c5186-IMG_6638.JPG" />
+    <Content Include="Content\img\imovel4\a903fc72be58fa12-IMG_6621.JPG" />
+    <Content Include="Content\img\imovel4\ad2a022d63c879f7-IMG_6559.JPG" />
+    <Content Include="Content\img\imovel4\b3f5dd847e4c8803-IMG_6510.JPG" />
+    <Content Include="Content\img\imovel4\b6b1aa2a177188ae-IMG_6585.JPG" />
+    <Content Include="Content\img\imovel4\c3ca4e1e2fb777fe-IMG_6537.JPG" />
+    <Content Include="Content\img\imovel4\c48f575b67f81bba-IMG_6573.JPG" />
+    <Content Include="Content\img\imovel4\c79751ca50e39f08-IMG_6615.JPG" />
+    <Content Include="Content\img\imovel4\c987ab56a0669ee8-IMG_6507.JPG" />
+    <Content Include="Content\img\imovel4\cfae33c96cb87aa0-IMG_6650.JPG" />
+    <Content Include="Content\img\imovel4\daac6666e2c5e700-IMG_6627.JPG" />
+    <Content Include="Content\img\imovel4\df58fab15e78db41-IMG_6568.JPG" />
+    <Content Include="Content\img\imovel4\f1dc27f3b3f97487-IMG_6524-HDR.JPG" />
+    <Content Include="Content\img\imovel4\ff8d8bb15cc9c8b3-IMG_6579.JPG" />
+    <Content Include="Content\img\imovel5\0912fd81c2404658-1000018947-02.jpeg" />
+    <Content Include="Content\img\imovel5\09d74c115b8af2aa-AREA EXTERNA 01.jpg" />
+    <Content Include="Content\img\imovel5\0a97caff5e75d068-1000018959-01.jpeg" />
+    <Content Include="Content\img\imovel5\0b636363ab8efc76-1000018974-01.jpeg" />
+    <Content Include="Content\img\imovel5\183ea19de9691ac8-1000018939-01.jpeg" />
+    <Content Include="Content\img\imovel5\1a09bf6bf92b6869-1000018940-01.jpeg" />
+    <Content Include="Content\img\imovel5\1cd2eec003076c53-1000018953-01.jpeg" />
+    <Content Include="Content\img\imovel5\20baf5bff17735ce-1000018950-01.jpeg" />
+    <Content Include="Content\img\imovel5\248d896b2504833e-SALA 03 %281%29.jpg" />
+    <Content Include="Content\img\imovel5\26655d64ff00c30b-1000018957-01.jpeg" />
+    <Content Include="Content\img\imovel5\36970a0d2a85a8c8-1000018962-01.jpeg" />
+    <Content Include="Content\img\imovel5\3b228cb37ae2c467-1000018967-01.jpeg" />
+    <Content Include="Content\img\imovel5\3dd6cec180253013-1000018941-01.jpeg" />
+    <Content Include="Content\img\imovel5\3ea865ef593cfb8b-SALA 06 %281%29.jpg" />
+    <Content Include="Content\img\imovel5\3f21a2eb7b472897-1000018964-01.jpeg" />
+    <Content Include="Content\img\imovel5\3fb205bbf4a39093-1000018954-01.jpeg" />
+    <Content Include="Content\img\imovel5\415228bc699a6edc-SALA 01 %281%29.jpg" />
+    <Content Include="Content\img\imovel5\41f0e997e1053b63-AREA EXTERNA 02.jpg" />
+    <Content Include="Content\img\imovel5\52344ad1d7960cda-SALA 03 %281%29.jpg" />
+    <Content Include="Content\img\imovel5\55bb4411ffc1b5c8-prisma 02.jpg" />
+    <Content Include="Content\img\imovel5\563d586a25f14a13-1000018944-01.jpeg" />
+    <Content Include="Content\img\imovel5\620396d51453280b-SALA 05 %281%29.jpg" />
+    <Content Include="Content\img\imovel5\62337e99f9ae0ccc-AREA EXTERNA 03.jpg" />
+    <Content Include="Content\img\imovel5\63f777643ca277d1-1000018948-01.jpeg" />
+    <Content Include="Content\img\imovel5\6622533206f73d1a-1000018945-01.jpeg" />
+    <Content Include="Content\img\imovel5\6db721f7090b11d3-SALA 03 %281%29.jpg" />
+    <Content Include="Content\img\imovel5\726e2f067fdfc38f-1000018963-01.jpeg" />
+    <Content Include="Content\img\imovel5\72821982a741374c-1000018956-01.jpeg" />
+    <Content Include="Content\img\imovel5\7329e011d13d9dfe-1000018970-01.jpeg" />
+    <Content Include="Content\img\imovel5\7a771c7a15d9137c-1000018972-01.jpeg" />
+    <Content Include="Content\img\imovel5\7e82031ab3a99437-1000018965-01.jpeg" />
+    <Content Include="Content\img\imovel5\7fdc00e8d7e9607a-1000018973-01.jpeg" />
+    <Content Include="Content\img\imovel5\83a999bf369fd8c8-4993b1cc210ba0d2-Planta.jpeg" />
+    <Content Include="Content\img\imovel5\8624d6f7e3e192ea-1000018942-01.jpeg" />
+    <Content Include="Content\img\imovel5\8a8270277cb1cf3b-AREA EXTERNA 03.jpg" />
+    <Content Include="Content\img\imovel5\8ccd739adcf29d38-SALA 05 %281%29.jpg" />
+    <Content Include="Content\img\imovel5\8f2c4ab14e142735-1000018960-01.jpeg" />
+    <Content Include="Content\img\imovel5\9232442e4f6731b6-prisma 01.jpg" />
+    <Content Include="Content\img\imovel5\9707723ce96fa734-1000018942-02.jpeg" />
+    <Content Include="Content\img\imovel5\9d4480fbe0e680dd-SALA 04 %281%29.jpg" />
+    <Content Include="Content\img\imovel5\9d6e7a6dd3dd2000-1000018968-01.jpeg" />
+    <Content Include="Content\img\imovel5\a8ddd79401285094-SALA 02 %281%29.jpg" />
+    <Content Include="Content\img\imovel5\aa4ad549e8bcc983-1000018946-01.jpeg" />
+    <Content Include="Content\img\imovel5\ab0e3c8f34ced55a-1000018969-01.jpeg" />
+    <Content Include="Content\img\imovel5\ab47addfbd7cc6e8-1000018955-01.jpeg" />
+    <Content Include="Content\img\imovel5\b6f98f7f08ba55af-SALA 04 %281%29.jpg" />
+    <Content Include="Content\img\imovel5\b9fb1bd511cf56f4-1000018952-01.jpeg" />
+    <Content Include="Content\img\imovel5\cf1b8a8d5a6339f2-1000018966-01.jpeg" />
+    <Content Include="Content\img\imovel5\e669b05d8dfc0cf4-1000018958-01.jpeg" />
+    <Content Include="Content\img\imovel5\eef6471c9de2db40-1000018971-01.jpeg" />
+    <Content Include="Content\img\imovel5\f4daa7c70fdf3d46-SALA 06 %281%29.jpg" />
+    <Content Include="Content\img\imovel5\f4de91fe74e9c465-1000018961-01.jpeg" />
+    <Content Include="Content\img\imovel5\f6c920ff4d6b5063-1000018943-01.jpeg" />
+    <Content Include="Content\img\imovel5\f8dd65a85e4e6325-1000018951-01.jpeg" />
+    <Content Include="Content\img\imovel5\fc89bc62db03166b-AREA EXTERNA 02.jpg" />
+    <Content Include="Content\img\imovel5\ff4c591df37bb892-1000018947-01.jpeg" />
     <Content Include="Content\img\logo.jpg" />
     <Content Include="Content\img\logo.png" />
     <Content Include="Content\img\logo2.png" />
     <Content Include="Content\img\nanda.jpg" />
     <Content Include="Content\img\source.jpg" />
     <Content Include="Content\js\app.min.js" />
+    <Content Include="Content\js\controle\prontos.js" />
+    <Content Include="Content\js\lightGallery\css\lightgallery.min.css" />
+    <Content Include="Content\js\lightGallery\fonts\lg.svg" />
+    <Content Include="Content\js\lightGallery\js\lg-fullscreen.min.js" />
+    <Content Include="Content\js\lightGallery\js\lg-thumbnail.min.js" />
+    <Content Include="Content\js\lightGallery\js\lightgallery.min.js" />
     <Content Include="Content\js\plugins\blazy\blazy.min.js" />
     <Content Include="Content\js\bootstrap.min.js" />
     <Content Include="Content\js\controle\busca-avancada.min.js" />
+    <Content Include="Content\js\plugins\custom.list.js" />
     <Content Include="Content\js\plugins\fixbar-up-scroll.min.js" />
     <Content Include="Content\js\plugins\handlebars.min.js" />
     <Content Include="Content\js\jquery-3.3.1.min.js" />
@@ -173,10 +518,12 @@
     <Content Include="Content\js\plugins\owl.carousel.js" />
     <Content Include="Content\js\plugins\owl.carousel.min.css" />
     <Content Include="Content\js\plugins\owl.carousel.min.js" />
+    <Content Include="Content\js\plugins\slick.min.js" />
     <Content Include="Content\js\plugins\toggle-switch.css" />
     <Content Include="Content\js\popper.min.js" />
     <Content Include="Content\js\plugins\select2.min.js" />
     <Content Include="Content\js\plugins\wNumb.js" />
+    <Content Include="Content\img\latitud.png" />
     <Content Include="Content\select2.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -188,6 +535,11 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="imoveiscode.json" />
+    <Content Include="Content\js\lightGallery\fonts\lg.ttf" />
+    <Content Include="Content\js\lightGallery\fonts\lg.woff" />
+    <Content Include="Content\js\lightGallery\fonts\lg.woff2" />
+    <None Include="Properties\PublishProfiles\fernandaregal-001-site1 - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\fernandaregal-001-site1 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -211,13 +563,29 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Contato.cshtml" />
-    <Content Include="Views\Imoveis\Imovel001.cshtml" />
+    <Content Include="Views\Imoveis\Imovel.cshtml" />
+    <Content Include="Views\Home\Outros.cshtml" />
+    <Content Include="Views\Imoveis\Lancamentos.cshtml" />
+    <Content Include="Views\Imoveis\Planta.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\img\imovel10\" />
+    <Folder Include="Content\img\imovel11\" />
+    <Folder Include="Content\img\imovel12\" />
+    <Folder Include="Content\img\imovel13\" />
+    <Folder Include="Content\img\imovel15\" />
+    <Folder Include="Content\img\imovel16\" />
+    <Folder Include="Content\img\imovel17\" />
+    <Folder Include="Content\img\imovel18\" />
+    <Folder Include="Content\img\imovel19\" />
+    <Folder Include="Content\img\imovel3\" />
+    <Folder Include="Content\img\imovel6\" />
+    <Folder Include="Content\img\imovel7\" />
+    <Folder Include="Content\img\imovel8\" />
+    <Folder Include="Content\img\imovel9\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
@@ -249,6 +617,9 @@
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />

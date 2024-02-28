@@ -1,0 +1,454 @@
+﻿@using Fernanda.Models;
+
+@model Fernanda.Models.ImovelCode
+
+
+@{
+    ViewBag.Title = "Imovel";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var imoveisRegistro = TempData["imoveis"];
+}
+
+<link rel="stylesheet" type="text/css" href="~/Content/js/lightGallery/css/lightgallery.min.css">
+<body class="page page-prontos  ">
+    <div class="wrapper">
+        <div class="content-wrapper">
+            <section class="content-header d-none d-xl-block">
+                <div class="section_main_title" style="display: none;">
+                    <div class="container">
+                        <h1>
+                            @Model.Titulo<small>
+
+                            </small>
+                        </h1>
+                    </div>
+                </div>
+                <div class="wrapper_bread" style="border-radius:20px">
+                    <div class="container">
+                        <ol class="breadcrumb">
+                            <li><a href="/home">Página Inicial</a></li>
+                            <li><a href="/imoveis">Imóveis</a></li>
+                            <li><a href="url_current()">Casa 5 Quarto(s) à venda, Barra da Tijuca, Rio de Janeiro</a></li>
+                        </ol>
+                        <div class="social-share pull-right d-none d-lg-block">
+                            <ul>
+                                <li>Compartilhar: </li>
+                                @*<li><a href="" target="_blank" class="share-btn facebook"><i class="fab fa-facebook-f"></i></a></li>*@
+                                <li><a href="" id="whatsapp-share-btt" rel="nofollow" target="_blank" class="whatsapp-share-button"><i class="fab fa-whatsapp"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="spark-screen">
+
+            <div class="container"><div class="row"></div></div>
+            <div class="container">
+                <div id="product-content" class="item-id-8665">
+                    <div class="row">
+                        <div class="col-12 col-lg-8">
+                            <div class="row-box gallery">
+                                <div class="slider-case slick-initialized slick-slider">
+
+                                    <div aria-live="polite" class="slick-list draggable">
+                                        <div class="slick-track" style="opacity: 1; width: 15330px;" role="listbox">
+                                            <div class="img_capa_galeria slick-slide slick-current slick-active" style="background-image: url(@Model.Capa);margin-inline: 80px; width: 930px; position: relative; left: 0px; top: 0px; z-index: 999; opacity: 1;" data-position="10" data-slick-index="10" aria-hidden="false" tabindex="-1" role="option" aria-describedby="slick-slide010"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <script>
+                                    window.addEventListener('DOMContentLoaded', function () {
+                                        $(document).ready(function () {
+
+                                            // click faz a galeria abrir com background escuro
+                                            $(".slider-case .img_capa_galeria").click(function () {
+                                                var posicao = $(this).attr('data-position');
+                                                $('.lightGal').find('.lightGalItem')[posicao].click();
+                                            });
+
+                                            // incia o slide da galeria
+                                            $('#product-content .slider-case').slick({
+                                                // asNavFor: '#product-content .slides',
+                                                slidesToShow: 1,
+                                                slidesToScroll: 1,
+                                                arrows: true,
+                                                autoplay: true,
+                                                fade: true,
+                                                speed: 400,
+                                                nextArrow: '<i class="fa fa-chevron-right next"></i>',
+                                                prevArrow: '<i class="fa fa-chevron-left prev"></i>',
+                                                dots: false
+                                            });
+
+                                        });
+                                    });
+                                </script>
+                            </div>
+
+                            @*<style>
+                                    .ocultar {
+                                        display: none;
+                                    }
+                                </style>*@
+
+                            <div class="row-box gallery-list" id="">
+                                <div class="content_secRow galeria mt-3">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="photos_sec lightGal- row mx-0" typeof="h">
+                                                @foreach (var item in Model.Fotos)
+                                                {<div class="col-md-3 col-6 mb-3 px-2 ">
+                                                        <div class="galeria-idx-1 img_thumb photo_col lightGalItem big ocultar" data-src="@item">
+                                                            <div style="background-image:url('@item');"></div><img src="@item" class="hide">
+                                                        </div>
+                                                    </div>
+                                                }
+
+                                            </div>
+                                        </div>
+
+                                        <script>
+                                            window.addEventListener('DOMContentLoaded', function () {
+                                                $(document).ready(function () {
+
+                                                    var $lightGall = $('.lightGal-');
+                                                    $lightGall.lightGallery({
+                                                        selector: '.lightGalItem ',
+
+                                                    });
+
+                                                    $('.ver-todas-').click(function (event) {
+                                                        $('.lightGal-').find('.lightGalItem')[0].click();
+                                                    });
+
+                                                });
+                                            });
+                                        </script>
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+
+
+                            <div class="row-box basic-info">
+                                <div class="row align-items-stretch">
+                                    <div class="col-12">
+                                        <h1>
+
+                                            @Model.Titulo
+                                        </h1>
+                                    </div>
+                                </div><div class="row mx-0">
+                                    <div class="regiao col-12 col-xl-6 order-1 order-xl-1 pl-1"><i class="fas fa-map-marker-alt"></i><span>@Model.Endereco</span></div>
+                                    <div class="posvalue-imovel valor_imv">
+                                        @*<span><i class="fas fa-dollar-sign"></i><span class="sufix"> Valor de venda: </span></span>*@
+                                        <span class="val destak">R$ @String.Format("{0:#,0}", Model.Valor)</span>
+                                    </div>
+                                    <div class="content_value col-12 col-xl-6 order-2 order-xl-1">
+
+                                        <div class="posvalue-imovel valor_imv"><span>Condomínio: </span><span class="val">R$ @String.Format("{0:#,0}".Replace(',', '.'), Model.Condominio)</span></div>
+                                        <div class="posvalue-imovel valor_imv"><span>IPTU: </span><span class="val">R$ @String.Format("{0:#,0}".Replace(',', '.'), Model.IPTU)/Mês</span></div>@*<div class="posvalue-imovel valor_imv"></div>*@
+                                    </div>
+                                    <div class="content_infos_qtd col-12 order-1 order-xl-1">
+                                        <div class="item_info">
+                                            <div class="icon_wrap">
+                                                <img src="~/Content/img/double-bed.png" />
+                                            </div><div class="text-info"><span class="quartos"><span>@Model.Quartos </span><span>Quartos</span></span><span> sendo @Model.Suites Suítes</span></div>
+                                        </div>
+                                        <div class="item_info">
+                                            <div class="icon_wrap">
+                                                <img src="~/Content/img/bath.png" />
+                                            </div><span>@Model.Banheiros</span><span class="text-info">Banheiros</span>
+                                        </div>
+                                        <div class="item_info">
+                                            <div class="icon_wrap">
+                                                <img src="~/Content/img/garage.png" />
+                                            </div><span>@Model.Vagas</span><span class="text-info">vaga(s)</span>
+                                        </div>
+                                        <div class="item_info">
+                                            <div class="icon_wrap">
+                                                <img src="~/Content/img/area.png" />
+                                            </div><span>@Model.Area</span><br /><span class="text-info">Área</span>
+                                        </div>
+                                        <div class="item_info">
+                                            <div class="icon_wrap">
+                                                <img src="~/Content/img/area.png" />
+                                            </div><span>@Model.AreaTotal</span><span class="text-info">Área Total</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- VIDEO -->
+                            @*<div class="row-box video">
+                                    <div class="conteudo">
+                                        <h3>Video</h3>
+                                        <div class="video-container">
+                                            <iframe width="100%" height="315" src="https://www.youtube.com/embed/OOl4bxV2iv4?si=9VPIUjpWJhPSct_7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                        </div>
+                                    </div>
+                                </div>*@
+
+                            <div class="row-box descriptions">
+                                <div class="descript">
+                                    <h3>Descrição</h3>
+                                    @foreach (var item in Model.Descricao)
+                                    {
+                                        <p>@item</p>
+                                    }
+
+                                </div>
+                            </div><div class="row-box characteristics-list">
+                                <h3>Comodidades</h3>
+
+                                <ul>
+                                    @foreach (var item in Model.Comodidades)
+                                    {
+                                        <li>@item</li>
+                                    }
+
+                                </ul>
+                            </div>
+
+                            <div class="row-box maps">
+                                <h3 class="stack_title">Localização</h3>
+                                <iframe src="@Model.Maps" width="900" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                                <style type="text/css">
+
+                                    .maps {
+                                        position: relative;
+                                    }
+
+                                    #map_canvas {
+                                        width: 100%;
+                                        height: 100%;
+                                        margin-top: 5%;
+                                        background-position: center;
+                                        background-repeat: no-repeat;
+                                        background-size: cover;
+                                    }
+                                </style>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-4 content_form">
+
+                            <div class="" style="width: 350px; padding-right:20px">
+                                <div class="affix-child contact">
+                                    <div class="contato-estou-interessado box-contato">
+                                        <h5 class="text-center">Gostou deste imóvel? Entre em contato no: </h5><h3 class="text-center">
+                                            <a href="https://wa.me/5521982379401?text=Olá,gostaria de saber mais sobre o imóvel - @Model.Titulo" target="_blank">
+                                                <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                                                +55 21 98237-9401
+                                            </a>
+                                        </h3>
+                                        <p class="text-center">
+                                            Para mais informações,
+                                            entre em contato no número acima.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="vitrine emp_vitrine home-vitrine-imoveis" id="home-vitrine-imoveis">
+                        <div class="container">
+                            <div class="row-box"><h3>Você também pode gostar:</h3></div>><div class="product_item_sec row mx-0">
+                                <div class="col-sm-12 px-0">
+                                    <div id="owl-home-vitrine3" class="owl-carousel owl-loaded owl-drag">
+                                        <div class="owl-stage-outer">
+                                            <div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 380px;">
+                                                @foreach (var item in (List<ImovelCode>)TempData["imoveis"])
+                                                {
+                                                    @*<a href="@Url.Action("Imovel001", "Imoveis", new { codigo = item.ID })"></a>*@
+                                                    <div class="owl-item active" style="width: 262.5px;">
+                                                        <div class="product_itemBx mb-4 item-id-8665" onclick="window.location.href = '@Url.Action("Imovel", "Imoveis", new { codigo = item.ID })'" style="cursor:pointer;">
+                                                            <div class="product_itemBxTop">
+                                                                <a class="vit_link_foto">
+                                                                    <div class="pdct_pic">
+                                                                        <div class="vitrine-venda-img owl-lazy" data-src="" style="background-image: url(@item.Capa); opacity: 1;">
+                                                                            <div class="hover_img"></div>
+                                                                            <div class="statustag tag_obra"><span class="text"><i class="fas fa-map-marker-alt"></i> @item.Bairro</span></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                            <div class="product_itemBxBot">
+                                                                <div class="tipos"><span>@item.Tipo</span></div>
+                                                                <h3>@item.Titulo</h3>
+                                                                <div class="content_imv_caract mx-0" style="min-height:65px;">
+                                                                    <div class="item wt-50" data-toggle="tooltip" title="" data-original-title="Quartos"><i class="fas fa-bed"></i><div class="qtd">@item.Quartos</div></div>
+                                                                    <div class="item wt-50" data-toggle="tooltip" title="" data-original-title="Suítes"><i class="fas fa-bath"></i><div class="qtd">@item.Banheiros</div></div>
+                                                                    <div class="item wt-50" data-toggle="tooltip" title="" data-original-title="Vagas"><i class="fas fa-car"></i><div class="qtd">@item.Vagas</div></div>
+                                                                    <div class="item wt-50" data-toggle="tooltip" title="" data-original-title="Área">
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="20.46" height="20.46" viewBox="0 0 20.46 20.46" class="tosvgdata replaced-svg">
+                                                                            <path id="vector-square" d="M20.46,5.115V1.279A1.279,1.279,0,0,0,19.182,0H15.345a1.279,1.279,0,0,0-1.279,1.279H6.394A1.279,1.279,0,0,0,5.115,0H1.279A1.279,1.279,0,0,0,0,1.279V5.115A1.279,1.279,0,0,0,1.279,6.394v7.673A1.279,1.279,0,0,0,0,15.345v3.836A1.279,1.279,0,0,0,1.279,20.46H5.115a1.279,1.279,0,0,0,1.279-1.279h7.673a1.279,1.279,0,0,0,1.279,1.279h3.836a1.279,1.279,0,0,0,1.279-1.279V15.345a1.279,1.279,0,0,0-1.279-1.279V6.394A1.279,1.279,0,0,0,20.46,5.115ZM16.624,2.558H17.9V3.836H16.624Zm-14.067,0H3.836V3.836H2.558ZM3.836,17.9H2.558V16.624H3.836Zm14.067,0H16.624V16.624H17.9Zm-1.279-3.836H15.345a1.279,1.279,0,0,0-1.279,1.279v1.279H6.394V15.345a1.279,1.279,0,0,0-1.279-1.279H3.836V6.394H5.115A1.279,1.279,0,0,0,6.394,5.115V3.836h7.673V5.115a1.279,1.279,0,0,0,1.279,1.279h1.279Z"></path>
+                                                                        </svg><div class="qtd">@item.Area</div>
+                                                                    </div>
+                                                                </div><div class="valor px-1 d-flex text-left"><div><small>R$ </small>@String.Format("{0:#,0}", item.Valor).Replace(',', '.')</div></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                }
+                                            </div>
+                                        </div>
+                                        <div class="owl-nav "><div class="owl-prev "></div><div class="owl-next"></div></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    window.addEventListener('DOMContentLoaded', function () {
+
+                        function link(link) {
+                            debugger
+                            window.location.href = link;
+                        }
+
+                        $(document).ready(function () {
+                            $('#btnFiltro').click(function () {
+                                $('#formPesquisa').submit()
+                            });
+
+                            var owl_home_vitrine = $("#owl-home-vitrine3");
+
+                            owl_home_vitrine.owlCarousel({
+                                onInitialized: function (element) {
+                                    $('#home-vitrine-imoveis').removeClass('d-none');
+                                    setTimeout(function () {
+                                        imageToSvgData();
+                                    }, 3000);
+                                },
+                                loop: false,
+                                margin: 20,
+                                nav: true,
+                                lazyLoad: true,
+                                navText: ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>'],
+                                items: 4,
+                                responsive: {
+                                    300: {
+                                        items: 1,
+                                        // nav:true
+                                        margin: 5
+                                    },
+                                    700: {
+                                        items: 2,
+                                        // nav:true
+                                    },
+                                    1000: {
+                                        items: 3,
+                                        // nav:true
+                                    },
+                                    1200: {
+                                        items: 4,
+
+                                    },
+                                    1400: {
+                                        items: 4,
+
+                                    },
+                                    1600: {
+                                        items: 4,
+
+                                    }
+                                }
+
+                            });
+                        });
+                    });
+                </script>
+            </div>
+        </div>
+
+        <style type="text/css">
+
+            .maps {
+                position: relative;
+            }
+
+            #map_canvas {
+                width: 100%;
+                height: 100%;
+                margin-top: 5%;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        </style>
+
+    </div><div class="container">
+        <div class="social-share d-block d-lg-none">
+            <h5 class="text-center">Compartilhar</h5><ul class="d-flex justify-content-center">
+                @*<li class="social-icon"><a href="" target="_blank" class="share-btn facebook"><i class="fab fa-facebook"></i></a></li>*@
+                <li class="social-icon"><a href="https://api.whatsapp.com/send?text=Fernanda%20Regal%20https%3A%2F%2Flocalhost%3A44390%2FImoveis%2FImovel%3Fcodigo%3D3  " id="whatsapp-share-btt" rel="nofollow" target="_blank" class="whatsapp-share-button"><i class="fab fa-whatsapp"></i></a></li>
+        </div><div class="topper"><i class="fa fa-chevron-up"></i></div>
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script><!-- Bootstrap 3.3.7 JS -->
+        <script src="~/Content/js/popper.min.js" defer="" type="text/javascript"></script>
+        <script src="~/Content/js/bootstrap.min.js" defer="" type="text/javascript"></script>
+        <script src="~/Content/js/plugins/handlebars.min.js" defer="" type="text/javascript"></script>
+        <script src="~/Content/js/plugins/owl.carousel.js" defer=""></script>
+        <script src="~/Content/js/plugins/owl.carousel.min.js" defer=""></script>
+        <script src="~/Content/js/plugins/nouislider.min.js" defer=""></script>
+        <script src="~/Content/js/plugins/jquery.mask.min.js" defer="" type="text/javascript"></script>
+        <script src="~/Content/js/plugins/select2.min.js" defer=""></script>
+        <script src="~/Content/js/plugins/blazy/blazy.min.js" defer=""></script>
+        <script src="~/Content/js/plugins/slick.min.js" defer="" type="text/javascript"></script>
+        <link href="~/Content/js/lightGallery/css/lightgallery.min.css" rel="stylesheet">
+        <script src="~/Content/js/lightGallery/js/lightgallery.min.js" defer=""></script>
+        <script src="~/Content/js/lightGallery/js/lg-thumbnail.min.js" defer=""></script>
+        <script src="~/Content/js/lightGallery/js/lg-fullscreen.min.js" defer=""></script>
+        <script src="~/Content/js/plugins/jquery.nice-select.min.js" defer=""></script>
+        <script src="~/Content/js/plugins/fixbar-up-scroll.min.js" defer=""></script>
+        <script src="~/Content/js/plugins/lgpd.js" defer=""></script>
+        <script src="~/Content/js/app.min.js" defer=""></script>
+        <script src="~/Content/js/controle/busca-avancada.min.js" defer="" type="text/javascript"></script>
+        <script src="~/Content/js/controle/prontos.js" defer="" type="text/javascript"></script>
+        <script src="~/Content/js/plugins/custom.list.js" defer=""></script>
+        <script src="~/Content/js/plugins/wNumb.js" defer=""></script>
+        <script src="~/Content/js/plugins/jquery.simplePagination.js" defer=""></script><link href="~/Content/js/plugins/jquery.simplePagination.css" rel="stylesheet" type="text/css">
+
+
+        <script>
+            var bLazy = new Blazy({
+                selector: '.lazyload',
+                src: 'data-blazy',
+                success: function (element) {
+                    imageToSvg();
+                }
+            });
+
+            function addCss(fileName) {
+                var link = $("<link />", {
+                    rel: "stylesheet",
+                    type: "text/css",
+                    href: fileName
+                })
+                $('head').append(link);
+            }
+
+            var arrCSS = [
+                '/css/select2.min.css',
+                '/css/fontawesome-all.min.css',
+                '/js/plugins/owl.carousel.min.css',
+                'https://fonts.googleapis.com/css?family=Montserrat:300,400,400i,500,600,700|Open+Sans:400,400i,600,700,800'
+            ]
+
+            arrCSS.forEach(function (css) {
+                addCss(css);
+            });
+        </script>
+        <script type="text/javascript">window.NREUM || (NREUM = {}); NREUM.info = { "beacon": "bam.nr-data.net", "licenseKey": "NRJS-c0d4e49821ab4c8a79b", "applicationID": "1037075978", "transactionName": "bldUbRdXXEYCAEBbClcdd1oRX11bTCJEQjlxRkJJOXVdWxcRW14JXEBFZSxbXUMGD3ddC01AWVUJU0B1FQpRRSxUXUBcCQ==", "queueTime": 0, "applicationTime": 795, "atts": "QhBXG19NT0g=", "errorBeacon": "bam.nr-data.net", "agent": "" }</script>
+    </div>
+</body>
+
